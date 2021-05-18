@@ -17,13 +17,33 @@ $f3 -> route('GET /', function() {
     echo "<h1>Hello, Pets!</h1>";
 
     //Instantiate a pet object
-    $pet1 = new Pet();
+    $pet1 = new Pet("Fido", "pink");
+
+    $pet1->setName("Fifi");
+    echo "My pet's name is " . $pet1->getName() . "<br>";
+
+    $pet1->setColor("Silver");
+    echo "My pet's color is " . $pet1->getColor() . "<br>";
+
+    echo "<br>";
 
     //Invoke the eat method
     $pet1->eat();
-
     $pet1->talk();
     $pet1->sleep();
+
+    echo "<br>";
+
+    $dog1 = new Dog("Riley", "brown");
+    $dog1->fetch();
+    $dog1->eat();
+
+    echo "<br>";
+
+    $cat1 = new Cat("Dots", "white");
+    $cat1->eat();
+    $cat1->scratch();
+
 
 }
 );
